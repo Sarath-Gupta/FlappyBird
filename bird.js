@@ -11,13 +11,8 @@ function Bird() {
     ellipse(this.x, this.y, 32, 32);
   }
 
-  this.up = function() {
-    this.velocity += this.lift;
-  }
-
   this.update = function() {
     this.velocity += this.gravity;
-    // this.velocity *= 0.9;
     this.y += this.velocity;
 
     if (this.y > height) {
