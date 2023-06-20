@@ -11,8 +11,6 @@ function draw() {
   bird.update();
 }
 
-function keyPressed() {
-  if (keyIsDown(UP_ARROW)){
-    bird.up();   
-  }
+function mouseClicked() {
+  bird.velocity += bird.lift;
 }
