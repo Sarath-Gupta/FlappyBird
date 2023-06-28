@@ -1,5 +1,7 @@
 var bird;
 var pipes = [];
+var score = 0;
+
 function setup() {
   createCanvas(400, 600);
   bird = new Bird();
@@ -10,15 +12,33 @@ function setup() {
 function draw() {
   background(0);
   bird.show();
+  textSize(32);
+  fill(255);
+  text(score, width/2, 50);
   bird.update();
   
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
   
-  for(var i = 0; i < pipes.length; i++) {
+  for(var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
+    
+    if(pipes[i].hits(bird)) {
+        console.log("HIT");
+        
+    }
+    
+    else if (pipes[i].passed) {
+        score++;
+        pipes[i].passed = false;
+        
+    }
+  
+    if (pipes.offscreen){
+      pipes.splice(i,1);
+    }
   }
 }
 
