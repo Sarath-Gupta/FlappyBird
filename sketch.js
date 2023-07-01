@@ -27,7 +27,7 @@ function draw() {
     if (pipes[i].hits(bird)) {
       console.log("HIT");
     } 
-    else if (pipes[i].offscreen() && !pipes[i].scored) {
+    else if (pipes[i].offscreen() && !pipes[i].scored && !pipes[i].highlight)     {
       score++;
       pipes[i].scored = true;
     }
