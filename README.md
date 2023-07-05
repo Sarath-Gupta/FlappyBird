@@ -1,4 +1,4 @@
-Flappy Bird
+FLAPPY BIRD
 
 This is the traditional bird game where the bird has to fly in between the obstacles.
 
